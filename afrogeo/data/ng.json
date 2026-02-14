@@ -1,0 +1,2539 @@
+{
+    "NG": {
+        "name": "Nigeria",
+        "states": {
+            "AB": {
+                "name": "Abia",
+                "capital": "Umuahia",
+                "lgas": {
+                    "Aba North": {
+                        "city": "Aba"
+                    },
+                    "Aba South": {
+                        "city": "Aba"
+                    },
+                    "Osisioma": {
+                        "city": "Aba"
+                    },
+                    "Obingwa": {
+                        "city": "Aba"
+                    },
+                    "Isiala Ngwa North": {
+                        "city": "Aba"
+                    },
+                    "Isiala Ngwa South": {
+                        "city": "Aba"
+                    },
+                    "Umuahia North": {
+                        "city": "Umuahia"
+                    },
+                    "Umuahia South": {
+                        "city": "Umuahia"
+                    },
+                    "Ikwuano": {
+                        "city": "Umuahia"
+                    },
+                    "Arochukwu": {
+                        "city": null
+                    },
+                    "Bende": {
+                        "city": null
+                    },
+                    "Isuikwuato": {
+                        "city": null
+                    },
+                    "Ohafia": {
+                        "city": null
+                    },
+                    "Ugwunagbo": {
+                        "city": null
+                    },
+                    "Ukwa East": {
+                        "city": null
+                    },
+                    "Ukwa West": {
+                        "city": null
+                    },
+                    "Umu Nneochi": {
+                        "city": null
+                    }
+                }
+            },
+            "AD": {
+                "name": "Adamawa",
+                "capital": "Yola",
+                "lgas": {
+                    "Demsa": {
+                        "city": null
+                    },
+                    "Fufore": {
+                        "city": null
+                    },
+                    "Ganye": {
+                        "city": null
+                    },
+                    "Girei": {
+                        "city": null
+                    },
+                    "Gombi": {
+                        "city": null
+                    },
+                    "Guyuk": {
+                        "city": null
+                    },
+                    "Hong": {
+                        "city": null
+                    },
+                    "Jada": {
+                        "city": null
+                    },
+                    "Lamurde": {
+                        "city": null
+                    },
+                    "Madagali": {
+                        "city": null
+                    },
+                    "Maiha": {
+                        "city": null
+                    },
+                    "Mayo-Belwa": {
+                        "city": null
+                    },
+                    "Michika": {
+                        "city": null
+                    },
+                    "Mubi North": {
+                        "city": "Mubi"
+                    },
+                    "Mubi South": {
+                        "city": "Mubi"
+                    },
+                    "Numan": {
+                        "city": "Numan"
+                    },
+                    "Shelleng": {
+                        "city": null
+                    },
+                    "Song": {
+                        "city": null
+                    },
+                    "Toungo": {
+                        "city": null
+                    },
+                    "Yola North": {
+                        "city": "Yola"
+                    },
+                    "Yola South": {
+                        "city": "Yola"
+                    }
+                }
+            },
+            "AK": {
+                "name": "Akwa Ibom",
+                "capital": "Uyo",
+                "lgas": {
+                    "Abak": {
+                        "city": null
+                    },
+                    "Eastern Obolo": {
+                        "city": null
+                    },
+                    "Eket": {
+                        "city": "Eket"
+                    },
+                    "Esit Eket": {
+                        "city": null
+                    },
+                    "Essien Udim": {
+                        "city": null
+                    },
+                    "Etim Ekpo": {
+                        "city": null
+                    },
+                    "Etinan": {
+                        "city": null
+                    },
+                    "Ibeno": {
+                        "city": null
+                    },
+                    "Ibesikpo Asutan": {
+                        "city": null
+                    },
+                    "Ibiono Ibom": {
+                        "city": null
+                    },
+                    "Ika": {
+                        "city": null
+                    },
+                    "Ikono": {
+                        "city": null
+                    },
+                    "Ikot Abasi": {
+                        "city": null
+                    },
+                    "Ikot Ekpene": {
+                        "city": "Ikot Ekpene"
+                    },
+                    "Ini": {
+                        "city": null
+                    },
+                    "Itu": {
+                        "city": null
+                    },
+                    "Mbo": {
+                        "city": null
+                    },
+                    "Mkpat Enin": {
+                        "city": null
+                    },
+                    "Nsit Atai": {
+                        "city": null
+                    },
+                    "Nsit Ibom": {
+                        "city": null
+                    },
+                    "Nsit Ubium": {
+                        "city": null
+                    },
+                    "Obot Akara": {
+                        "city": null
+                    },
+                    "Okobo": {
+                        "city": null
+                    },
+                    "Onna": {
+                        "city": null
+                    },
+                    "Oron": {
+                        "city": "Oron"
+                    },
+                    "Oruk Anam": {
+                        "city": null
+                    },
+                    "Udung Uko": {
+                        "city": null
+                    },
+                    "Ukanafun": {
+                        "city": null
+                    },
+                    "Uruan": {
+                        "city": null
+                    },
+                    "Urue-Offong/Oruko": {
+                        "city": "Oron"
+                    },
+                    "Uyo": {
+                        "city": "Uyo"
+                    }
+                }
+            },
+            "AN": {
+                "name": "Anambra",
+                "capital": "Awka",
+                "lgas": {
+                    "Aguata": {
+                        "city": null
+                    },
+                    "Anambra East": {
+                        "city": null
+                    },
+                    "Anambra West": {
+                        "city": null
+                    },
+                    "Anaocha": {
+                        "city": null
+                    },
+                    "Awka North": {
+                        "city": "Awka"
+                    },
+                    "Awka South": {
+                        "city": "Awka"
+                    },
+                    "Ayamelum": {
+                        "city": null
+                    },
+                    "Dunukofia": {
+                        "city": null
+                    },
+                    "Ekwusigo": {
+                        "city": null
+                    },
+                    "Idemili North": {
+                        "city": null
+                    },
+                    "Idemili South": {
+                        "city": null
+                    },
+                    "Ihiala": {
+                        "city": null
+                    },
+                    "Njikoka": {
+                        "city": null
+                    },
+                    "Nnewi North": {
+                        "city": "Nnewi"
+                    },
+                    "Nnewi South": {
+                        "city": "Nnewi"
+                    },
+                    "Ogbaru": {
+                        "city": null
+                    },
+                    "Onitsha North": {
+                        "city": "Onitsha"
+                    },
+                    "Onitsha South": {
+                        "city": "Onitsha"
+                    },
+                    "Orumba North": {
+                        "city": null
+                    },
+                    "Orumba South": {
+                        "city": null
+                    },
+                    "Oyi": {
+                        "city": null
+                    }
+                }
+            },
+            "BA": {
+                "name": "Bauchi",
+                "capital": "Bauchi",
+                "lgas": {
+                    "Alkaleri": {
+                        "city": null
+                    },
+                    "Bauchi": {
+                        "city": "Bauchi"
+                    },
+                    "Bogoro": {
+                        "city": null
+                    },
+                    "Damban": {
+                        "city": null
+                    },
+                    "Darazo": {
+                        "city": null
+                    },
+                    "Dass": {
+                        "city": null
+                    },
+                    "Gamawa": {
+                        "city": null
+                    },
+                    "Giade": {
+                        "city": null
+                    },
+                    "Itas/Gadau": {
+                        "city": null
+                    },
+                    "Jama’are": {
+                        "city": null
+                    },
+                    "Katagum": {
+                        "city": null
+                    },
+                    "Kirfi": {
+                        "city": null
+                    },
+                    "Misau": {
+                        "city": null
+                    },
+                    "Ningi": {
+                        "city": null
+                    },
+                    "Shira": {
+                        "city": null
+                    },
+                    "Tafawa Balewa": {
+                        "city": null
+                    },
+                    "Toro": {
+                        "city": "Toro"
+                    },
+                    "Warji": {
+                        "city": null
+                    },
+                    "Zaki": {
+                        "city": null
+                    },
+                    "Ganjuwa": {
+                        "city": null
+                    }
+                }
+            },
+            "BY": {
+                "name": "Bayelsa",
+                "capital": "Yenagoa",
+                "lgas": {
+                    "Brass": {
+                        "city": "Brass"
+                    },
+                    "Ekeremor": {
+                        "city": null
+                    },
+                    "Kolokuma/Opokuma": {
+                        "city": null
+                    },
+                    "Nembe": {
+                        "city": "Nembe"
+                    },
+                    "Ogbia": {
+                        "city": "Ogbia"
+                    },
+                    "Sagbama": {
+                        "city": null
+                    },
+                    "Southern Ijaw": {
+                        "city": null
+                    },
+                    "Yenagoa": {
+                        "city": "Yenagoa"
+                    }
+                }
+            },
+            "BE": {
+                "name": "Benue",
+                "capital": "Makurdi",
+                "lgas": {
+                    "Ado": {
+                        "city": null
+                    },
+                    "Agatu": {
+                        "city": null
+                    },
+                    "Apa": {
+                        "city": null
+                    },
+                    "Buruku": {
+                        "city": null
+                    },
+                    "Gboko": {
+                        "city": "Gboko"
+                    },
+                    "Guma": {
+                        "city": null
+                    },
+                    "Gwer East": {
+                        "city": null
+                    },
+                    "Gwer West": {
+                        "city": null
+                    },
+                    "Katsina-Ala": {
+                        "city": null
+                    },
+                    "Konshisha": {
+                        "city": null
+                    },
+                    "Kwande": {
+                        "city": null
+                    },
+                    "Logo": {
+                        "city": null
+                    },
+                    "Makurdi": {
+                        "city": "Makurdi"
+                    },
+                    "Obi": {
+                        "city": null
+                    },
+                    "Ogbadibo": {
+                        "city": null
+                    },
+                    "Ohimini": {
+                        "city": null
+                    },
+                    "Oju": {
+                        "city": null
+                    },
+                    "Okpokwu": {
+                        "city": null
+                    },
+                    "Otukpo": {
+                        "city": "Otukpo"
+                    },
+                    "Tarka": {
+                        "city": null
+                    },
+                    "Ukum": {
+                        "city": null
+                    },
+                    "Ushongo": {
+                        "city": null
+                    },
+                    "Vandeikya": {
+                        "city": null
+                    }
+                }
+            },
+            "BO": {
+                "name": "Borno",
+                "capital": "Maiduguri",
+                "lgas": {
+                    "Abadam": {
+                        "city": null
+                    },
+                    "Askira/Uba": {
+                        "city": null
+                    },
+                    "Bama": {
+                        "city": "Bama"
+                    },
+                    "Bayo": {
+                        "city": null
+                    },
+                    "Biu": {
+                        "city": "Biu"
+                    },
+                    "Chibok": {
+                        "city": null
+                    },
+                    "Damboa": {
+                        "city": "Damboa"
+                    },
+                    "Dikwa": {
+                        "city": null
+                    },
+                    "Gubio": {
+                        "city": null
+                    },
+                    "Gwoza": {
+                        "city": "Gwoza"
+                    },
+                    "Hawul": {
+                        "city": null
+                    },
+                    "Jere": {
+                        "city": null
+                    },
+                    "Kaga": {
+                        "city": null
+                    },
+                    "Kala/Balge": {
+                        "city": null
+                    },
+                    "Konduga": {
+                        "city": null
+                    },
+                    "Kukawa": {
+                        "city": null
+                    },
+                    "Kwaya Kusar": {
+                        "city": null
+                    },
+                    "Mafa": {
+                        "city": null
+                    },
+                    "Magumeri": {
+                        "city": null
+                    },
+                    "Maiduguri": {
+                        "city": "Maiduguri"
+                    },
+                    "Marte": {
+                        "city": null
+                    },
+                    "Mobbar": {
+                        "city": null
+                    },
+                    "Monguno": {
+                        "city": null
+                    },
+                    "Ngala": {
+                        "city": null
+                    },
+                    "Nganzai": {
+                        "city": null
+                    },
+                    "Shani": {
+                        "city": null
+                    },
+                    "Guzamala": {
+                        "city": null
+                    }
+                }
+            },
+            "CR": {
+                "name": "Cross River",
+                "capital": "Calabar",
+                "lgas": {
+                    "Akamkpa": {
+                        "city": null
+                    },
+                    "Akpabuyo": {
+                        "city": null
+                    },
+                    "Bakassi": {
+                        "city": null
+                    },
+                    "Bekwarra": {
+                        "city": null
+                    },
+                    "Biase": {
+                        "city": null
+                    },
+                    "Boki": {
+                        "city": null
+                    },
+                    "Calabar Municipal": {
+                        "city": "Calabar"
+                    },
+                    "Calabar South": {
+                        "city": "Calabar"
+                    },
+                    "Etung": {
+                        "city": null
+                    },
+                    "Ikom": {
+                        "city": "Ikom"
+                    },
+                    "Obanliku": {
+                        "city": null
+                    },
+                    "Obubra": {
+                        "city": null
+                    },
+                    "Obudu": {
+                        "city": "Obudu"
+                    },
+                    "Odukpani": {
+                        "city": null
+                    },
+                    "Ogoja": {
+                        "city": "Ogoja"
+                    },
+                    "Yakurr": {
+                        "city": null
+                    },
+                    "Yala": {
+                        "city": null
+                    }
+                }
+            },
+            "DE": {
+                "name": "Delta",
+                "capital": "Asaba",
+                "lgas": {
+                    "Aniocha North": {
+                        "city": null
+                    },
+                    "Aniocha South": {
+                        "city": null
+                    },
+                    "Bomadi": {
+                        "city": null
+                    },
+                    "Burutu": {
+                        "city": null
+                    },
+                    "Ethiope East": {
+                        "city": null
+                    },
+                    "Ethiope West": {
+                        "city": null
+                    },
+                    "Ika North-East": {
+                        "city": null
+                    },
+                    "Ika South": {
+                        "city": null
+                    },
+                    "Isoko North": {
+                        "city": null
+                    },
+                    "Isoko South": {
+                        "city": null
+                    },
+                    "Ndokwa East": {
+                        "city": null
+                    },
+                    "Ndokwa West": {
+                        "city": null
+                    },
+                    "Okpe": {
+                        "city": null
+                    },
+                    "Oshimili North": {
+                        "city": null
+                    },
+                    "Oshimili South": {
+                        "city": null
+                    },
+                    "Patani": {
+                        "city": null
+                    },
+                    "Sapele": {
+                        "city": "Sapele"
+                    },
+                    "Udu": {
+                        "city": "Effurun"
+                    },
+                    "Ughelli North": {
+                        "city": null
+                    },
+                    "Ughelli South": {
+                        "city": null
+                    },
+                    "Ukwuani": {
+                        "city": null
+                    },
+                    "Uwheru": {
+                        "city": null
+                    },
+                    "Warri North": {
+                        "city": "Warri"
+                    },
+                    "Warri South": {
+                        "city": "Warri"
+                    },
+                    "Warri South-West": {
+                        "city": "Warri"
+                    },
+                    "Asaba": {
+                        "city": "Asaba"
+                    }
+                }
+            },
+            "EB": {
+                "name": "Ebonyi",
+                "capital": "Abakaliki",
+                "lgas": {
+                    "Abakaliki": {
+                        "city": "Abakaliki"
+                    },
+                    "Afikpo North": {
+                        "city": "Afikpo"
+                    },
+                    "Afikpo South (Edda)": {
+                        "city": "Afikpo"
+                    },
+                    "Ebonyi": {
+                        "city": null
+                    },
+                    "Ezza North": {
+                        "city": null
+                    },
+                    "Ezza South": {
+                        "city": null
+                    },
+                    "Ikwo": {
+                        "city": "Ikwo"
+                    },
+                    "Ishielu": {
+                        "city": null
+                    },
+                    "Ivo": {
+                        "city": null
+                    },
+                    "Izzi": {
+                        "city": null
+                    },
+                    "Ohaozara": {
+                        "city": null
+                    },
+                    "Ohaukwu": {
+                        "city": null
+                    },
+                    "Onicha": {
+                        "city": null
+                    }
+                }
+            },
+            "ED": {
+                "name": "Edo",
+                "capital": "Benin City",
+                "lgas": {
+                    "Akoko-Edo": {
+                        "city": null
+                    },
+                    "Egor": {
+                        "city": null
+                    },
+                    "Esan Central": {
+                        "city": null
+                    },
+                    "Esan North-East": {
+                        "city": null
+                    },
+                    "Esan South-East": {
+                        "city": null
+                    },
+                    "Esan West": {
+                        "city": null
+                    },
+                    "Etsako Central": {
+                        "city": null
+                    },
+                    "Etsako East": {
+                        "city": null
+                    },
+                    "Etsako West": {
+                        "city": null
+                    },
+                    "Igueben": {
+                        "city": null
+                    },
+                    "Ikpoba-Okha": {
+                        "city": null
+                    },
+                    "Oredo": {
+                        "city": "Benin City"
+                    },
+                    "Orhionmwon": {
+                        "city": null
+                    },
+                    "Ovia North-East": {
+                        "city": null
+                    },
+                    "Ovia South-West": {
+                        "city": null
+                    },
+                    "Owan East": {
+                        "city": null
+                    },
+                    "Owan West": {
+                        "city": null
+                    },
+                    "Uhunmwonde": {
+                        "city": null
+                    },
+                    "Benin City": {
+                        "city": "Benin City"
+                    }
+                }
+            },
+            "EK": {
+                "name": "Ekiti",
+                "capital": "Ado-Ekiti",
+                "lgas": {
+                    "Ado-Ekiti": {
+                        "city": "Ado-Ekiti"
+                    },
+                    "Efon": {
+                        "city": null
+                    },
+                    "Ekiti East": {
+                        "city": null
+                    },
+                    "Ekiti South-West": {
+                        "city": null
+                    },
+                    "Ekiti West": {
+                        "city": null
+                    },
+                    "Emure": {
+                        "city": null
+                    },
+                    "Gbonyin": {
+                        "city": null
+                    },
+                    "Ido-Osi": {
+                        "city": null
+                    },
+                    "Ijero": {
+                        "city": "Ijero"
+                    },
+                    "Ikere": {
+                        "city": "Ikere"
+                    },
+                    "Ikole": {
+                        "city": null
+                    },
+                    "Ilejemeje": {
+                        "city": null
+                    },
+                    "Irepodun/Ifelodun": {
+                        "city": null
+                    },
+                    "Ise/Orun": {
+                        "city": null
+                    },
+                    "Moba": {
+                        "city": null
+                    },
+                    "Oye": {
+                        "city": "Oye"
+                    }
+                }
+            },
+            "EN": {
+                "name": "Enugu",
+                "capital": "Enugu",
+                "lgas": {
+                    "Awgu": {
+                        "city": "Awgu"
+                    },
+                    "Enugu East": {
+                        "city": "Enugu"
+                    },
+                    "Enugu North": {
+                        "city": "Enugu"
+                    },
+                    "Enugu South": {
+                        "city": "Enugu"
+                    },
+                    "Ezeagu": {
+                        "city": null
+                    },
+                    "Igbo Etiti": {
+                        "city": null
+                    },
+                    "Igbo Eze North": {
+                        "city": null
+                    },
+                    "Igbo Eze South": {
+                        "city": null
+                    },
+                    "Isi Uzo": {
+                        "city": null
+                    },
+                    "Nkanu East": {
+                        "city": null
+                    },
+                    "Nkanu West": {
+                        "city": null
+                    },
+                    "Nsukka": {
+                        "city": "Nsukka"
+                    },
+                    "Oji River": {
+                        "city": null
+                    },
+                    "Udenu": {
+                        "city": null
+                    },
+                    "Udi": {
+                        "city": "Udi"
+                    },
+                    "Uzo-Uwani": {
+                        "city": null
+                    }
+                }
+            },
+            "FCT": {
+                "name": "Federal Capital Territory",
+                "capital": "Abuja",
+                "lgas": {
+                    "Abaji": {
+                        "city": "Abaji"
+                    },
+                    "AMAC": {
+                        "city": "Abuja"
+                    },
+                    "Bwari": {
+                        "city": "Bwari"
+                    },
+                    "Gwagwalada": {
+                        "city": "Gwagwalada"
+                    },
+                    "Kuje": {
+                        "city": "Kuje"
+                    },
+                    "Kwali": {
+                        "city": "Kwali"
+                    }
+                }
+            },
+            "GO": {
+                "name": "Gombe",
+                "capital": "Gombe",
+                "lgas": {
+                    "Akko": {
+                        "city": null
+                    },
+                    "Balanga": {
+                        "city": null
+                    },
+                    "Billiri": {
+                        "city": "Billiri"
+                    },
+                    "Dukku": {
+                        "city": null
+                    },
+                    "Funakaye": {
+                        "city": null
+                    },
+                    "Gombe": {
+                        "city": "Gombe"
+                    },
+                    "Kaltungo": {
+                        "city": null
+                    },
+                    "Kwami": {
+                        "city": null
+                    },
+                    "Nafada/Bajoga": {
+                        "city": null
+                    },
+                    "Shongom": {
+                        "city": null
+                    },
+                    "Yamaltu/Deba": {
+                        "city": null
+                    }
+                }
+            },
+            "IM": {
+                "name": "Imo",
+                "capital": "Owerri",
+                "lgas": {
+                    "Aboh Mbaise": {
+                        "city": null
+                    },
+                    "Ahiazu Mbaise": {
+                        "city": null
+                    },
+                    "Ehime Mbano": {
+                        "city": null
+                    },
+                    "Ezinihitte Mbaise": {
+                        "city": null
+                    },
+                    "Ideato North": {
+                        "city": null
+                    },
+                    "Ideato South": {
+                        "city": null
+                    },
+                    "Ihitte/Uboma": {
+                        "city": null
+                    },
+                    "Ikeduru": {
+                        "city": null
+                    },
+                    "Isiala Mbano": {
+                        "city": null
+                    },
+                    "Isu": {
+                        "city": null
+                    },
+                    "Mbaitoli": {
+                        "city": null
+                    },
+                    "Ngor Okpala": {
+                        "city": null
+                    },
+                    "Njaba": {
+                        "city": null
+                    },
+                    "Nkwerre": {
+                        "city": null
+                    },
+                    "Nwangele": {
+                        "city": null
+                    },
+                    "Obowo": {
+                        "city": null
+                    },
+                    "Oguta": {
+                        "city": null
+                    },
+                    "Ohaji/Egbema": {
+                        "city": null
+                    },
+                    "Okigwe": {
+                        "city": "Okigwe"
+                    },
+                    "Orlu": {
+                        "city": "Orlu"
+                    },
+                    "Orsu": {
+                        "city": null
+                    },
+                    "Oru East": {
+                        "city": null
+                    },
+                    "Oru West": {
+                        "city": null
+                    },
+                    "Owerri Municipal": {
+                        "city": "Owerri"
+                    },
+                    "Owerri North": {
+                        "city": "Owerri"
+                    },
+                    "Owerri West": {
+                        "city": "Owerri"
+                    }
+                }
+            },
+            "JI": {
+                "name": "Jigawa",
+                "capital": "Dutse",
+                "lgas": {
+                    "Auyo": {
+                        "city": null
+                    },
+                    "Babura": {
+                        "city": null
+                    },
+                    "Biriniwa": {
+                        "city": null
+                    },
+                    "Birnin Kudu": {
+                        "city": null
+                    },
+                    "Buji": {
+                        "city": null
+                    },
+                    "Dutse": {
+                        "city": "Dutse"
+                    },
+                    "Gagarawa": {
+                        "city": null
+                    },
+                    "Garki": {
+                        "city": null
+                    },
+                    "Gumel": {
+                        "city": "Gumel"
+                    },
+                    "Guri": {
+                        "city": null
+                    },
+                    "Gwaram": {
+                        "city": null
+                    },
+                    "Gwiwa": {
+                        "city": null
+                    },
+                    "Hadejia": {
+                        "city": "Hadejia"
+                    },
+                    "Jahun": {
+                        "city": null
+                    },
+                    "Kafin Hausa": {
+                        "city": null
+                    },
+                    "Kaugama": {
+                        "city": null
+                    },
+                    "Kazaure": {
+                        "city": "Kazaure"
+                    },
+                    "Kiri Kasama": {
+                        "city": null
+                    },
+                    "Kiyawa": {
+                        "city": null
+                    },
+                    "Maigatari": {
+                        "city": null
+                    },
+                    "Malam Madori": {
+                        "city": null
+                    },
+                    "Miga": {
+                        "city": null
+                    },
+                    "Ringim": {
+                        "city": null
+                    },
+                    "Roni": {
+                        "city": null
+                    },
+                    "Sule Tankarkar": {
+                        "city": null
+                    },
+                    "Taura": {
+                        "city": null
+                    },
+                    "Yankwashi": {
+                        "city": null
+                    }
+                }
+            },
+            "KD": {
+                "name": "Kaduna",
+                "capital": "Kaduna",
+                "lgas": {
+                    "Birnin Gwari": {
+                        "city": null
+                    },
+                    "Chikun": {
+                        "city": null
+                    },
+                    "Giwa": {
+                        "city": "Giwa"
+                    },
+                    "Igabi": {
+                        "city": null
+                    },
+                    "Ikara": {
+                        "city": null
+                    },
+                    "Jaba": {
+                        "city": null
+                    },
+                    "Jema’a": {
+                        "city": null
+                    },
+                    "Kachia": {
+                        "city": "Kachia"
+                    },
+                    "Kaduna North": {
+                        "city": "Kaduna"
+                    },
+                    "Kaduna South": {
+                        "city": "Kaduna"
+                    },
+                    "Kagarko": {
+                        "city": null
+                    },
+                    "Kajuru": {
+                        "city": null
+                    },
+                    "Kaura": {
+                        "city": null
+                    },
+                    "Kauru": {
+                        "city": null
+                    },
+                    "Kubau": {
+                        "city": null
+                    },
+                    "Kudan": {
+                        "city": null
+                    },
+                    "Lere": {
+                        "city": null
+                    },
+                    "Makarfi": {
+                        "city": null
+                    },
+                    "Sabon Gari": {
+                        "city": null
+                    },
+                    "Sanga": {
+                        "city": null
+                    },
+                    "Soba": {
+                        "city": null
+                    },
+                    "Zangon Kataf": {
+                        "city": null
+                    },
+                    "Zaria": {
+                        "city": "Zaria"
+                    }
+                }
+            },
+            "KN": {
+                "name": "Kano",
+                "capital": "Kano",
+                "lgas": {
+                    "Ajingi": {
+                        "city": null
+                    },
+                    "Albasu": {
+                        "city": null
+                    },
+                    "Bagwai": {
+                        "city": null
+                    },
+                    "Bebeji": {
+                        "city": null
+                    },
+                    "Bichi": {
+                        "city": null
+                    },
+                    "Bunkure": {
+                        "city": null
+                    },
+                    "Dala": {
+                        "city": null
+                    },
+                    "Dambatta": {
+                        "city": null
+                    },
+                    "Dawakin Kudu": {
+                        "city": null
+                    },
+                    "Dawakin Tofa": {
+                        "city": null
+                    },
+                    "Doguwa": {
+                        "city": null
+                    },
+                    "Fagge": {
+                        "city": null
+                    },
+                    "Gabasawa": {
+                        "city": null
+                    },
+                    "Garko": {
+                        "city": null
+                    },
+                    "Garun Mallam": {
+                        "city": null
+                    },
+                    "Gaya": {
+                        "city": "Gaya"
+                    },
+                    "Gezawa": {
+                        "city": "Gezawa"
+                    },
+                    "Gwale": {
+                        "city": null
+                    },
+                    "Gwarzo": {
+                        "city": null
+                    },
+                    "Kabo": {
+                        "city": null
+                    },
+                    "Kano Municipal": {
+                        "city": "Kano"
+                    },
+                    "Karaye": {
+                        "city": null
+                    },
+                    "Kibiya": {
+                        "city": null
+                    },
+                    "Kiru": {
+                        "city": null
+                    },
+                    "Kumbotso": {
+                        "city": null
+                    },
+                    "Kunchi": {
+                        "city": null
+                    },
+                    "Kura": {
+                        "city": null
+                    },
+                    "Madobi": {
+                        "city": null
+                    },
+                    "Makoda": {
+                        "city": null
+                    },
+                    "Minjibir": {
+                        "city": null
+                    },
+                    "Nasarawa": {
+                        "city": null
+                    },
+                    "Rano": {
+                        "city": "Rano"
+                    },
+                    "Rimin Gado": {
+                        "city": null
+                    },
+                    "Rogo": {
+                        "city": null
+                    },
+                    "Shanono": {
+                        "city": null
+                    },
+                    "Sumaila": {
+                        "city": null
+                    },
+                    "Takai": {
+                        "city": null
+                    },
+                    "Tarauni": {
+                        "city": null
+                    },
+                    "Tofa": {
+                        "city": null
+                    },
+                    "Tsanyawa": {
+                        "city": null
+                    },
+                    "Tudun Wada": {
+                        "city": null
+                    },
+                    "Ungogo": {
+                        "city": null
+                    },
+                    "Warawa": {
+                        "city": null
+                    },
+                    "Wudil": {
+                        "city": "Wudil"
+                    }
+                }
+            },
+            "KT": {
+                "name": "Katsina",
+                "capital": "Katsina",
+                "lgas": {
+                    "Bakori": {
+                        "city": null
+                    },
+                    "Batagarawa": {
+                        "city": null
+                    },
+                    "Batsari": {
+                        "city": null
+                    },
+                    "Baure": {
+                        "city": null
+                    },
+                    "Bindawa": {
+                        "city": null
+                    },
+                    "Charanchi": {
+                        "city": null
+                    },
+                    "Dan Musa": {
+                        "city": null
+                    },
+                    "Dandume": {
+                        "city": null
+                    },
+                    "Danja": {
+                        "city": null
+                    },
+                    "Daura": {
+                        "city": "Daura"
+                    },
+                    "Dutsi": {
+                        "city": null
+                    },
+                    "Dutsin-Ma": {
+                        "city": null
+                    },
+                    "Faskari": {
+                        "city": null
+                    },
+                    "Funtua": {
+                        "city": "Funtua"
+                    },
+                    "Ingawa": {
+                        "city": null
+                    },
+                    "Jibia": {
+                        "city": null
+                    },
+                    "Kafur": {
+                        "city": "Kafur"
+                    },
+                    "Kaita": {
+                        "city": null
+                    },
+                    "Kankara": {
+                        "city": null
+                    },
+                    "Kankia": {
+                        "city": null
+                    },
+                    "Katsina": {
+                        "city": "Katsina"
+                    },
+                    "Kurfi": {
+                        "city": null
+                    },
+                    "Kusada": {
+                        "city": null
+                    },
+                    "Mai'Adua": {
+                        "city": null
+                    },
+                    "Malumfashi": {
+                        "city": null
+                    },
+                    "Mani": {
+                        "city": null
+                    },
+                    "Mashi": {
+                        "city": null
+                    },
+                    "Matazu": {
+                        "city": null
+                    },
+                    "Musawa": {
+                        "city": null
+                    },
+                    "Rimi": {
+                        "city": null
+                    },
+                    "Sabuwa": {
+                        "city": null
+                    },
+                    "Safana": {
+                        "city": null
+                    },
+                    "Sandamu": {
+                        "city": null
+                    },
+                    "Zango": {
+                        "city": null
+                    }
+                }
+            },
+            "KE": {
+                "name": "Kebbi",
+                "capital": "Birnin Kebbi",
+                "lgas": {
+                    "Aleiro": {
+                        "city": null
+                    },
+                    "Arewa Dandi": {
+                        "city": null
+                    },
+                    "Argungu": {
+                        "city": "Argungu"
+                    },
+                    "Augie": {
+                        "city": null
+                    },
+                    "Bagudo": {
+                        "city": null
+                    },
+                    "Birnin Kebbi": {
+                        "city": "Birnin Kebbi"
+                    },
+                    "Bunza": {
+                        "city": null
+                    },
+                    "Dandi": {
+                        "city": null
+                    },
+                    "Fakai": {
+                        "city": null
+                    },
+                    "Gwandu": {
+                        "city": "Gwandu"
+                    },
+                    "Jega": {
+                        "city": null
+                    },
+                    "Kalgo": {
+                        "city": null
+                    },
+                    "Koko/Besse": {
+                        "city": null
+                    },
+                    "Maiyama": {
+                        "city": null
+                    },
+                    "Ngaski": {
+                        "city": null
+                    },
+                    "Sakaba": {
+                        "city": null
+                    },
+                    "Shanga": {
+                        "city": null
+                    },
+                    "Suru": {
+                        "city": null
+                    },
+                    "Wasagu/Danko": {
+                        "city": null
+                    },
+                    "Yauri": {
+                        "city": null
+                    },
+                    "Zuru": {
+                        "city": "Zuru"
+                    }
+                }
+            },
+            "KO": {
+                "name": "Kogi",
+                "capital": "Lokoja",
+                "lgas": {
+                    "Adavi": {
+                        "city": null
+                    },
+                    "Ajaokuta": {
+                        "city": "Ajaokuta"
+                    },
+                    "Ankpa": {
+                        "city": "Ankpa"
+                    },
+                    "Bassa": {
+                        "city": null
+                    },
+                    "Dekina": {
+                        "city": null
+                    },
+                    "Ibaji": {
+                        "city": null
+                    },
+                    "Idah": {
+                        "city": null
+                    },
+                    "Igalamela-Odolu": {
+                        "city": null
+                    },
+                    "Ijumu": {
+                        "city": null
+                    },
+                    "Kabba/Bunu": {
+                        "city": null
+                    },
+                    "Kogi": {
+                        "city": null
+                    },
+                    "Lokoja": {
+                        "city": "Lokoja"
+                    },
+                    "Mopa-Muro": {
+                        "city": null
+                    },
+                    "Ofu": {
+                        "city": null
+                    },
+                    "Ogori/Magongo": {
+                        "city": null
+                    },
+                    "Okehi": {
+                        "city": null
+                    },
+                    "Okene": {
+                        "city": "Okene"
+                    },
+                    "Olamaboro": {
+                        "city": null
+                    },
+                    "Omala": {
+                        "city": null
+                    },
+                    "Yagba East": {
+                        "city": null
+                    },
+                    "Yagba West": {
+                        "city": null
+                    }
+                }
+            },
+            "KW": {
+                "name": "Kwara",
+                "capital": "Ilorin",
+                "lgas": {
+                    "Asa": {
+                        "city": null
+                    },
+                    "Baruten": {
+                        "city": null
+                    },
+                    "Edu": {
+                        "city": null
+                    },
+                    "Ekiti": {
+                        "city": null
+                    },
+                    "Ifelodun": {
+                        "city": null
+                    },
+                    "Ilorin East": {
+                        "city": "Ilorin"
+                    },
+                    "Ilorin West": {
+                        "city": "Ilorin"
+                    },
+                    "Ilorin South": {
+                        "city": "Ilorin"
+                    },
+                    "Irepodun": {
+                        "city": null
+                    },
+                    "Isin": {
+                        "city": null
+                    },
+                    "Kaiama": {
+                        "city": "Kaiama"
+                    },
+                    "Moro": {
+                        "city": null
+                    },
+                    "Offa": {
+                        "city": "Offa"
+                    },
+                    "Oke Ero": {
+                        "city": null
+                    },
+                    "Oyun": {
+                        "city": null
+                    },
+                    "Patigi": {
+                        "city": null
+                    }
+                }
+            },
+            "LA": {
+                "name": "Lagos",
+                "capital": "Ikeja",
+                "lgas": {
+                    "Agege": {
+                        "city": "Agege"
+                    },
+                    "Ajeromi-Ifelodun": {
+                        "city": null
+                    },
+                    "Alimosho": {
+                        "city": null
+                    },
+                    "Amuwo-Odofin": {
+                        "city": null
+                    },
+                    "Apapa": {
+                        "city": null
+                    },
+                    "Badagry": {
+                        "city": "Badagry"
+                    },
+                    "Epe": {
+                        "city": "Epe"
+                    },
+                    "Eti-Osa": {
+                        "city": null
+                    },
+                    "Ibeju-Lekki": {
+                        "city": null
+                    },
+                    "Ifako-Ijaiye": {
+                        "city": null
+                    },
+                    "Ikeja": {
+                        "city": "Ikeja"
+                    },
+                    "Ikorodu": {
+                        "city": "Ikorodu"
+                    },
+                    "Kosofe": {
+                        "city": null
+                    },
+                    "Lagos Island": {
+                        "city": null
+                    },
+                    "Lagos Mainland": {
+                        "city": null
+                    },
+                    "Mushin": {
+                        "city": null
+                    },
+                    "Ojo": {
+                        "city": null
+                    },
+                    "Oshodi-Isolo": {
+                        "city": null
+                    },
+                    "Shomolu": {
+                        "city": null
+                    },
+                    "Surulere": {
+                        "city": null
+                    }
+                }
+            },
+            "NA": {
+                "name": "Nasarawa",
+                "capital": "Lafia",
+                "lgas": {
+                    "Akwanga": {
+                        "city": "Akwanga"
+                    },
+                    "Awe": {
+                        "city": null
+                    },
+                    "Doma": {
+                        "city": null
+                    },
+                    "Karu": {
+                        "city": null
+                    },
+                    "Keana": {
+                        "city": null
+                    },
+                    "Keffi": {
+                        "city": "Keffi"
+                    },
+                    "Kokona": {
+                        "city": "Kokona"
+                    },
+                    "Lafia": {
+                        "city": "Lafia"
+                    },
+                    "Nasarawa": {
+                        "city": "Nasarawa"
+                    },
+                    "Nasarawa Egon": {
+                        "city": null
+                    },
+                    "Obi": {
+                        "city": null
+                    },
+                    "Toto": {
+                        "city": null
+                    },
+                    "Wamba": {
+                        "city": null
+                    }
+                }
+            },
+            "NI": {
+                "name": "Niger",
+                "capital": "Minna",
+                "lgas": {
+                    "Agaie": {
+                        "city": null
+                    },
+                    "Agwara": {
+                        "city": null
+                    },
+                    "Bida": {
+                        "city": "Bida"
+                    },
+                    "Borgu": {
+                        "city": null
+                    },
+                    "Bosso": {
+                        "city": null
+                    },
+                    "Chanchaga": {
+                        "city": null
+                    },
+                    "Edati": {
+                        "city": null
+                    },
+                    "Gbako": {
+                        "city": null
+                    },
+                    "Gurara": {
+                        "city": null
+                    },
+                    "Katcha": {
+                        "city": null
+                    },
+                    "Kontagora": {
+                        "city": "Kontagora"
+                    },
+                    "Lapai": {
+                        "city": null
+                    },
+                    "Lavun": {
+                        "city": null
+                    },
+                    "Magama": {
+                        "city": null
+                    },
+                    "Mariga": {
+                        "city": null
+                    },
+                    "Mashegu": {
+                        "city": null
+                    },
+                    "Mokwa": {
+                        "city": null
+                    },
+                    "Munya": {
+                        "city": null
+                    },
+                    "Paikoro": {
+                        "city": null
+                    },
+                    "Rafi": {
+                        "city": null
+                    },
+                    "Rijau": {
+                        "city": null
+                    },
+                    "Shiroro": {
+                        "city": null
+                    },
+                    "Suleja": {
+                        "city": "Suleja"
+                    },
+                    "Tafa": {
+                        "city": null
+                    },
+                    "Wushishi": {
+                        "city": null
+                    }
+                }
+            },
+            "OG": {
+                "name": "Ogun",
+                "capital": "Abeokuta",
+                "lgas": {
+                    "Abeokuta North": {
+                        "city": "Abeokuta"
+                    },
+                    "Abeokuta South": {
+                        "city": "Abeokuta"
+                    },
+                    "Ado-Odo/Ota": {
+                        "city": null
+                    },
+                    "Ewekoro": {
+                        "city": null
+                    },
+                    "Ifo": {
+                        "city": null
+                    },
+                    "Ijebu East": {
+                        "city": null
+                    },
+                    "Ijebu North": {
+                        "city": null
+                    },
+                    "Ijebu North East": {
+                        "city": null
+                    },
+                    "Ijebu Ode": {
+                        "city": "Ijebu Ode"
+                    },
+                    "Ikenne": {
+                        "city": null
+                    },
+                    "Imeko Afon": {
+                        "city": null
+                    },
+                    "Ipokia": {
+                        "city": null
+                    },
+                    "Obafemi Owode": {
+                        "city": null
+                    },
+                    "Odogbolu": {
+                        "city": null
+                    },
+                    "Ogun Waterside": {
+                        "city": null
+                    },
+                    "Remo North": {
+                        "city": null
+                    },
+                    "Sagamu": {
+                        "city": "Sagamu"
+                    },
+                    "Yewa North": {
+                        "city": null
+                    },
+                    "Yewa South": {
+                        "city": null
+                    }
+                }
+            },
+            "ON": {
+                "name": "Ondo",
+                "capital": "Akure",
+                "lgas": {
+                    "Akoko North-East": {
+                        "city": null
+                    },
+                    "Akoko North-West": {
+                        "city": null
+                    },
+                    "Akoko South-East": {
+                        "city": null
+                    },
+                    "Akoko South-West": {
+                        "city": null
+                    },
+                    "Akure North": {
+                        "city": "Akure"
+                    },
+                    "Akure South": {
+                        "city": "Akure"
+                    },
+                    "Ese-Odo": {
+                        "city": null
+                    },
+                    "Idanre": {
+                        "city": null
+                    },
+                    "Ifedore": {
+                        "city": null
+                    },
+                    "Ilaje": {
+                        "city": null
+                    },
+                    "Ile-Oluji/Okeigbo": {
+                        "city": null
+                    },
+                    "Irele": {
+                        "city": null
+                    },
+                    "Odigbo": {
+                        "city": null
+                    },
+                    "Okitipupa": {
+                        "city": null
+                    },
+                    "Ondo East": {
+                        "city": "Ondo"
+                    },
+                    "Ondo West": {
+                        "city": "Ondo"
+                    },
+                    "Ose": {
+                        "city": null
+                    },
+                    "Owo": {
+                        "city": "Owo"
+                    }
+                }
+            },
+            "OS": {
+                "name": "Osun",
+                "capital": "Oshogbo",
+                "lgas": {
+                    "Aiyedade": {
+                        "city": null
+                    },
+                    "Aiyedire": {
+                        "city": null
+                    },
+                    "Atakunmosa East": {
+                        "city": null
+                    },
+                    "Atakunmosa West": {
+                        "city": null
+                    },
+                    "Boluwaduro": {
+                        "city": null
+                    },
+                    "Boripe": {
+                        "city": null
+                    },
+                    "Ede North": {
+                        "city": "Ede"
+                    },
+                    "Ede South": {
+                        "city": "Ede"
+                    },
+                    "Egbedore": {
+                        "city": null
+                    },
+                    "Ejigbo": {
+                        "city": "Ejigbo"
+                    },
+                    "Ife Central": {
+                        "city": "Ife"
+                    },
+                    "Ife East": {
+                        "city": "Ife"
+                    },
+                    "Ife North": {
+                        "city": "Ife"
+                    },
+                    "Ife South": {
+                        "city": "Ife"
+                    },
+                    "Ifedayo": {
+                        "city": null
+                    },
+                    "Ifelodun": {
+                        "city": null
+                    },
+                    "Ila": {
+                        "city": null
+                    },
+                    "Ilesa East": {
+                        "city": "Ilesa"
+                    },
+                    "Ilesa West": {
+                        "city": "Ilesa"
+                    },
+                    "Irepodun": {
+                        "city": null
+                    },
+                    "Irewole": {
+                        "city": null
+                    },
+                    "Isokan": {
+                        "city": null
+                    },
+                    "Iwo": {
+                        "city": "Iwo"
+                    },
+                    "Obokun": {
+                        "city": null
+                    },
+                    "Odo Otin": {
+                        "city": null
+                    },
+                    "Ola Oluwa": {
+                        "city": null
+                    },
+                    "Olorunda": {
+                        "city": null
+                    },
+                    "Oriade": {
+                        "city": null
+                    },
+                    "Orolu": {
+                        "city": null
+                    },
+                    "Osogbo": {
+                        "city": "Oshogbo"
+                    }
+                }
+            },
+            "OY": {
+                "name": "Oyo",
+                "capital": "Ibadan",
+                "lgas": {
+                    "Afijio": {
+                        "city": null
+                    },
+                    "Akinyele": {
+                        "city": null
+                    },
+                    "Atiba": {
+                        "city": null
+                    },
+                    "Atisbo": {
+                        "city": null
+                    },
+                    "Egbeda": {
+                        "city": null
+                    },
+                    "Ibadan North": {
+                        "city": "Ibadan"
+                    },
+                    "Ibadan North-East": {
+                        "city": "Ibadan"
+                    },
+                    "Ibadan North-West": {
+                        "city": "Ibadan"
+                    },
+                    "Ibadan South-East": {
+                        "city": "Ibadan"
+                    },
+                    "Ibadan South-West": {
+                        "city": "Ibadan"
+                    },
+                    "Ibarapa Central": {
+                        "city": null
+                    },
+                    "Ibarapa East": {
+                        "city": null
+                    },
+                    "Ibarapa North": {
+                        "city": null
+                    },
+                    "Ido": {
+                        "city": null
+                    },
+                    "Irepo": {
+                        "city": null
+                    },
+                    "Iseyin": {
+                        "city": "Iseyin"
+                    },
+                    "Iwajowa": {
+                        "city": null
+                    },
+                    "Kajola": {
+                        "city": null
+                    },
+                    "Lagelu": {
+                        "city": null
+                    },
+                    "Ogbomosho North": {
+                        "city": "Ogbomoso"
+                    },
+                    "Ogbomosho South": {
+                        "city": "Ogbomoso"
+                    },
+                    "Ogo Oluwa": {
+                        "city": null
+                    },
+                    "Oluyole": {
+                        "city": null
+                    },
+                    "Ona Ara": {
+                        "city": null
+                    },
+                    "Orelope": {
+                        "city": null
+                    },
+                    "Orire": {
+                        "city": null
+                    },
+                    "Oyo East": {
+                        "city": "Oyo"
+                    },
+                    "Oyo West": {
+                        "city": "Oyo"
+                    },
+                    "Saki East": {
+                        "city": "Saki"
+                    },
+                    "Saki West": {
+                        "city": "Saki"
+                    },
+                    "Surulere (Oyo)": {
+                        "city": null
+                    }
+                }
+            },
+            "PL": {
+                "name": "Plateau",
+                "capital": "Jos",
+                "lgas": {
+                    "Barkin Ladi": {
+                        "city": "Barkin Ladi"
+                    },
+                    "Bassa": {
+                        "city": null
+                    },
+                    "Bokkos": {
+                        "city": null
+                    },
+                    "Jos East": {
+                        "city": "Jos"
+                    },
+                    "Jos North": {
+                        "city": "Jos"
+                    },
+                    "Jos South": {
+                        "city": "Jos"
+                    },
+                    "Kanam": {
+                        "city": null
+                    },
+                    "Kanke": {
+                        "city": null
+                    },
+                    "Langtang North": {
+                        "city": null
+                    },
+                    "Langtang South": {
+                        "city": null
+                    },
+                    "Mangu": {
+                        "city": null
+                    },
+                    "Mikang": {
+                        "city": null
+                    },
+                    "Pankshin": {
+                        "city": "Pankshin"
+                    },
+                    "Qua'an Pan": {
+                        "city": null
+                    },
+                    "Riyom": {
+                        "city": null
+                    },
+                    "Shendam": {
+                        "city": "Shendam"
+                    },
+                    "Wase": {
+                        "city": null
+                    }
+                }
+            },
+            "RI": {
+                "name": "Rivers",
+                "capital": "Port Harcourt",
+                "lgas": {
+                    "Abua/Odual": {
+                        "city": null
+                    },
+                    "Ahoada East": {
+                        "city": null
+                    },
+                    "Ahoada West": {
+                        "city": null
+                    },
+                    "Akuku-Toru": {
+                        "city": null
+                    },
+                    "Andoni": {
+                        "city": null
+                    },
+                    "Asari-Toru": {
+                        "city": null
+                    },
+                    "Bonny": {
+                        "city": "Bonny"
+                    },
+                    "Degema": {
+                        "city": "Degema"
+                    },
+                    "Eleme": {
+                        "city": null
+                    },
+                    "Emohua": {
+                        "city": null
+                    },
+                    "Etche": {
+                        "city": null
+                    },
+                    "Gokana": {
+                        "city": null
+                    },
+                    "Ikwerre": {
+                        "city": null
+                    },
+                    "Khana": {
+                        "city": null
+                    },
+                    "Obio-Akpor": {
+                        "city": "Port Harcourt"
+                    },
+                    "Ogba/Egbema/Ndoni": {
+                        "city": "Omoku"
+                    },
+                    "Ogu/Bolo": {
+                        "city": null
+                    },
+                    "Okrika": {
+                        "city": null
+                    },
+                    "Omuma": {
+                        "city": null
+                    },
+                    "Opobo/Nkoro": {
+                        "city": null
+                    },
+                    "Oyigbo": {
+                        "city": null
+                    },
+                    "Port Harcourt": {
+                        "city": "Port Harcourt"
+                    },
+                    "Tai": {
+                        "city": null
+                    }
+                }
+            },
+            "SO": {
+                "name": "Sokoto",
+                "capital": "Sokoto",
+                "lgas": {
+                    "Binji": {
+                        "city": null
+                    },
+                    "Bodinga": {
+                        "city": null
+                    },
+                    "Dange-Shuni": {
+                        "city": null
+                    },
+                    "Gada": {
+                        "city": null
+                    },
+                    "Goronyo": {
+                        "city": null
+                    },
+                    "Gudu": {
+                        "city": null
+                    },
+                    "Gwadabawa": {
+                        "city": null
+                    },
+                    "Illela": {
+                        "city": "Illela"
+                    },
+                    "Isa": {
+                        "city": null
+                    },
+                    "Kebbe": {
+                        "city": null
+                    },
+                    "Kware": {
+                        "city": null
+                    },
+                    "Rabah": {
+                        "city": null
+                    },
+                    "Sabon Birni": {
+                        "city": null
+                    },
+                    "Shagari": {
+                        "city": null
+                    },
+                    "Silame": {
+                        "city": null
+                    },
+                    "Sokoto North": {
+                        "city": "Sokoto"
+                    },
+                    "Sokoto South": {
+                        "city": "Sokoto"
+                    },
+                    "Tambuwal": {
+                        "city": "Tambuwal"
+                    },
+                    "Tangaza": {
+                        "city": null
+                    },
+                    "Tureta": {
+                        "city": null
+                    },
+                    "Wamako": {
+                        "city": null
+                    },
+                    "Wurno": {
+                        "city": "Wurno"
+                    },
+                    "Yabo": {
+                        "city": null
+                    }
+                }
+            },
+            "TA": {
+                "name": "Taraba",
+                "capital": "Jalingo",
+                "lgas": {
+                    "Ardo-Kola": {
+                        "city": null
+                    },
+                    "Bali": {
+                        "city": "Bali"
+                    },
+                    "Donga": {
+                        "city": null
+                    },
+                    "Gashaka": {
+                        "city": "Gembu"
+                    },
+                    "Gassol": {
+                        "city": null
+                    },
+                    "Ibi": {
+                        "city": null
+                    },
+                    "Jalingo": {
+                        "city": "Jalingo"
+                    },
+                    "Karim Lamido": {
+                        "city": null
+                    },
+                    "Kurmi": {
+                        "city": null
+                    },
+                    "Lau": {
+                        "city": null
+                    },
+                    "Sardauna": {
+                        "city": "Gembu"
+                    },
+                    "Takum": {
+                        "city": "Takum"
+                    },
+                    "Ussa": {
+                        "city": null
+                    },
+                    "Wukari": {
+                        "city": "Wukari"
+                    },
+                    "Yorro": {
+                        "city": null
+                    },
+                    "Zing": {
+                        "city": null
+                    }
+                }
+            },
+            "YO": {
+                "name": "Yobe",
+                "capital": "Damaturu",
+                "lgas": {
+                    "Bade": {
+                        "city": "Gashua"
+                    },
+                    "Bursari": {
+                        "city": null
+                    },
+                    "Damaturu": {
+                        "city": "Damaturu"
+                    },
+                    "Fika": {
+                        "city": null
+                    },
+                    "Fune": {
+                        "city": null
+                    },
+                    "Geidam": {
+                        "city": "Geidam"
+                    },
+                    "Gujba": {
+                        "city": null
+                    },
+                    "Gulani": {
+                        "city": null
+                    },
+                    "Jakusko": {
+                        "city": null
+                    },
+                    "Karasuwa": {
+                        "city": null
+                    },
+                    "Machina": {
+                        "city": null
+                    },
+                    "Nangere": {
+                        "city": null
+                    },
+                    "Nguru": {
+                        "city": "Nguru"
+                    },
+                    "Potiskum": {
+                        "city": "Potiskum"
+                    },
+                    "Tarmuwa": {
+                        "city": null
+                    },
+                    "Yunusari": {
+                        "city": null
+                    },
+                    "Yusufari": {
+                        "city": null
+                    }
+                }
+            },
+            "ZA": {
+                "name": "Zamfara",
+                "capital": "Gusau",
+                "lgas": {
+                    "Anka": {
+                        "city": "Anka"
+                    },
+                    "Bakura": {
+                        "city": null
+                    },
+                    "Birnin Magaji/Kiyaw": {
+                        "city": null
+                    },
+                    "Bukkuyum": {
+                        "city": null
+                    },
+                    "Bungudu": {
+                        "city": null
+                    },
+                    "Gummi": {
+                        "city": null
+                    },
+                    "Gusau": {
+                        "city": "Gusau"
+                    },
+                    "Kaura Namoda": {
+                        "city": "Kaura Namoda"
+                    },
+                    "Maradun": {
+                        "city": null
+                    },
+                    "Maru": {
+                        "city": null
+                    },
+                    "Shinkafi": {
+                        "city": null
+                    },
+                    "Talata Mafara": {
+                        "city": "Talata Mafara"
+                    },
+                    "Tsafe": {
+                        "city": null
+                    },
+                    "Zurmi": {
+                        "city": null
+                    }
+                }
+            }
+        }
+    }
+}

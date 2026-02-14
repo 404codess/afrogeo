@@ -1,0 +1,1 @@
+from afrogeo import verify
