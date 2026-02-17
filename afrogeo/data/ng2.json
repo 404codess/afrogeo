@@ -1,0 +1,14 @@
+{
+    "Nigeria": {
+        "Lagos": {
+            "Ikeja": ["Ikeja", "Ojodu", "Ogba"],
+            "Lekki": ["Ibeju-Lekki", "Eti-Osa"]
+        },
+        "FCT": {
+            "Abuja": ["Municipal", "Gwagwalada", "Kuje"]
+        },
+        "Rivers": {
+            "Port Harcourt": ["Obio-Akpor", "Port Harcourt"]
+        }
+    }
+}
