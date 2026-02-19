@@ -1,12 +1,10 @@
-# afrogeo/verify.py
-
 import json
 from pathlib import Path
 from afrogeo.result import Result
 
-# Path to ng.json (works offline and editable mode)
+# Load JSON
 BASE = Path(__file__).parent
-DATA_PATH = BASE / "data" / "ng2.json"
+DATA_PATH = BASE / "data" / "ng.json"
 
 with open(DATA_PATH, "r", encoding="utf-8") as f:
     DATA = json.load(f)
@@ -14,106 +12,101 @@ with open(DATA_PATH, "r", encoding="utf-8") as f:
 
 def verify(user_input: dict):
     """
-    Verify Nigerian location based on:
-    - state + city + LGA (full mode)
-    - state + LGA only (minimal mode)
+    Verify Nigerian location using:
 
-    Returns a Result object with normalized proper-case output.
+    - state (code OR full name)
+    - lga (required)
+    - city (optional)
+
+    Accepts lowercase inputs.
     """
+
     errors = []
-    normalized = {}
 
-    # Extract user input & normalize
-    country = user_input.get("country", "").strip()
-    state = user_input.get("state", "").strip()
-    city = user_input.get("city", "").strip() or None
-    lga = user_input.get("lga", "").strip()
-    
-    
+    country_input = user_input.get("country", "").strip().lower()
+    state_input = user_input.get("state", "").strip().lower()
+    lga_input = user_input.get("lga", "").strip().lower()
+    city_input = user_input.get("city", "").strip().lower() or None
 
-    if not country or not state or not lga:
-        errors.append("country, state, and lga are required")
-        return Result(False, errors)
+    if not state_input or not lga_input:
+        return Result(False, ["state and lga are required"])
 
-    # Lowercase for matching
-    country_lower = country.lower()
-    state_lower = state.lower()
-    city_lower = city.lower() if city else None
-    lga_lower = lga.lower()
+    # -------------------------
+    # COUNTRY MATCH (NG / Nigeria)
+    # -------------------------
+    found_country_code = None
 
-    # ----- COUNTRY CHECK -----
-    found_country = None
-    for c in DATA:
-        if c.lower() == country_lower:
-            found_country = c
+    for code, country in DATA.items():
+        if (
+            code.lower() == country_input
+            or country["name"].lower() == country_input
+            or country_input == ""
+        ):
+            found_country_code = code
             break
-    if not found_country:
-        errors.append("Invalid country")
-        return Result(False, errors)
 
-    # ----- STATE CHECK -----
-    found_state = None
-    for s in DATA[found_country]:
-        if s.lower() == state_lower:
-            found_state = s
+    if not found_country_code:
+        return Result(False, ["Invalid country"])
+
+    country_data = DATA[found_country_code]
+    states = country_data["states"]
+
+    # -------------------------
+    # STATE MATCH (code OR name)
+    # -------------------------
+    found_state_code = None
+    found_state_data = None
+
+    for code, state in states.items():
+        if (
+            code.lower() == state_input
+            or state["name"].lower() == state_input
+        ):
+            found_state_code = code
+            found_state_data = state
             break
-    if not found_state:
-        errors.append("Invalid state")
-        return Result(False, errors)
 
-    state_cities = DATA[found_country][found_state]
+    if not found_state_code:
+        return Result(False, ["Invalid state"])
 
-    # ----- FULL MODE: city + lga -----
-    if city_lower:
-        found_city = None
-        for ct in state_cities:
-            if ct.lower() == city_lower:
-                found_city = ct
-                break
-        if not found_city:
-            errors.append("Invalid city")
-            return Result(False, errors)
+    # -------------------------
+    # LGA MATCH
+    # -------------------------
+    lgas = found_state_data["lgas"]
 
-        # LGA check
-        lgas = state_cities[found_city]
-        found_lga = None
-        for l in lgas:
-            if l.lower() == lga_lower:
-                found_lga = l
-                break
-        if not found_lga:
-            errors.append("Invalid LGA for selected city")
-            return Result(False, errors)
+    found_lga_name = None
+    found_city_name = None
 
-        normalized = {
-            "country": found_country,
-            "state": found_state,
-            "city": found_city,
-            "lga": found_lga
-        }
-        return Result(True, [], normalized)
+    for lga_name, lga_info in lgas.items():
+        if lga_name.lower() == lga_input:
+            found_lga_name = lga_name
+            found_city_name = lga_info["city"]
+            break
 
-    # ----- MINIMAL MODE: state + lga -----
-    else:
-        found_lga = None
-        found_city = None
-        for ct, lgas in state_cities.items():
-            for l in lgas:
-                if l.lower() == lga_lower:
-                    found_lga = l
-                    found_city = ct
-                    break
-            if found_lga:
-                break
+    if not found_lga_name:
+        return Result(False, ["Invalid LGA for selected state"])
 
-        if not found_lga:
-            errors.append("LGA not found in state")
-            return Result(False, errors)
+    # -------------------------
+    # OPTIONAL CITY CHECK
+    # -------------------------
+    if city_input:
+        if not found_city_name:
+            return Result(False, ["LGA does not belong to a city"])
 
-        normalized = {
-            "country": found_country,
-            "state": found_state,
-            "city": found_city,
-            "lga": found_lga
-        }
-        return Result(True, [], normalized)
+        if found_city_name.lower() != city_input:
+            return Result(False, ["City does not match LGA"])
+
+    # -------------------------
+    # SUCCESS
+    # -------------------------
+    normalized = {
+        "country_code": found_country_code,
+        "country": country_data["name"],
+        "state_code": found_state_code,
+        "state": found_state_data["name"],
+        "capital": found_state_data["capital"],
+        "lga": found_lga_name,
+        "city": found_city_name,
+    }
+
+    return Result(True, [], normalized)
