@@ -4,8 +4,8 @@ from afrogeo import verify
 r1 = verify({
     "country": "Nigeria",
     "state": "Lagos",
-    "city": "Ikeja",
-    "lga": "Ojodu"
+    "city": "Agege",
+    "lga": "Agege"
 })
 print(r1, r1.normalized)
 
@@ -13,7 +13,7 @@ print(r1, r1.normalized)
 r2 = verify({
     "country": "Nigeria",
     "state": "Lagos",
-    "lga": "Ojodu"
+    "lga": "Agege"
 })
 print(r2, r2.normalized)
 

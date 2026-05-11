@@ -1,55 +1,94 @@
 import json
+import functools
 from pathlib import Path
 from afrogeo.result import Result
 
-# Load JSON
-BASE = Path(__file__).parent
-DATA_PATH = BASE / "data" / "ng.json"
+# Constants
+BASE_DIR = Path(__file__).parent
+DATA_DIR = BASE_DIR / "data"
 
-with open(DATA_PATH, "r", encoding="utf-8") as f:
-    DATA = json.load(f)
+@functools.lru_cache(maxsize=10)
+def load_country_data(country_code: str):
+    """
+    Load country data from a JSON file in the data directory.
 
+    Args:
+        country_code: The ISO country code (e.g., 'ng').
+
+    Returns:
+        A dictionary containing the country data, or None if not found.
+    """
+    file_path = DATA_DIR / f"{country_code.lower()}.json"
+    if not file_path.exists():
+        return None
+    
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, IOError):
+        return None
 
 def verify(user_input: dict):
     """
-    Verify Nigerian location using:
+    Verify African location data against local datasets.
 
-    - state (code OR full name)
-    - lga (required)
-    - city (optional)
+    This function validates if a given state, LGA, and optional city exist
+    within the specified country. It handles case-insensitivity and 
+    normalizes the output.
 
-    Accepts lowercase inputs.
+    Args:
+        user_input (dict): A dictionary containing:
+            - 'country' (str): Full name or ISO code (e.g., 'Nigeria' or 'NG').
+            - 'state' (str): Full name or code (e.g., 'Lagos' or 'LA').
+            - 'lga' (str): Local Government Area name.
+            - 'city' (str, optional): City name for validation.
+
+    Returns:
+        afrogeo.result.Result: An object containing validation status,
+            errors (if any), and normalized data.
+
+    Example:
+        >>> from afrogeo import verify
+        >>> res = verify({"country": "NG", "state": "LA", "lga": "Agege"})
+        >>> if res:
+        ...     print(res.normalized['state'])
+        Lagos
     """
+    country_input = str(user_input.get("country", "")).strip().lower()
+    state_input = str(user_input.get("state", "")).strip().lower()
+    lga_input = str(user_input.get("lga", "")).strip().lower()
+    city_input = str(user_input.get("city", "")).strip().lower() or None
 
-    errors = []
-
-    country_input = user_input.get("country", "").strip().lower()
-    state_input = user_input.get("state", "").strip().lower()
-    lga_input = user_input.get("lga", "").strip().lower()
-    city_input = user_input.get("city", "").strip().lower() or None
-
+    if not country_input:
+        return Result(False, ["country is required"])
     if not state_input or not lga_input:
         return Result(False, ["state and lga are required"])
 
     # -------------------------
-    # COUNTRY MATCH (NG / Nigeria)
+    # DATA LOADING (Dynamic)
     # -------------------------
-    found_country_code = None
+    # Map country names to codes if necessary (Basic mapping for now)
+    country_map = {"nigeria": "ng", "ghana": "gh", "kenya": "ke"}
+    country_code = country_map.get(country_input, country_input)
+    
+    data = load_country_data(country_code)
+    if not data:
+        return Result(False, [f"Data for country '{country_input}' not found or unsupported"])
 
-    for code, country in DATA.items():
-        if (
-            code.lower() == country_input
-            or country["name"].lower() == country_input
-            or country_input == ""
-        ):
-            found_country_code = code
+    # -------------------------
+    # COUNTRY MATCH
+    # -------------------------
+    found_country_key = None
+    for key in data.keys():
+        if key.lower() == country_code:
+            found_country_key = key
             break
+    
+    if not found_country_key:
+        return Result(False, [f"Invalid country code in data for '{country_input}'"])
 
-    if not found_country_code:
-        return Result(False, ["Invalid country"])
-
-    country_data = DATA[found_country_code]
-    states = country_data["states"]
+    country_data = data[found_country_key]
+    states = country_data.get("states", {})
 
     # -------------------------
     # STATE MATCH (code OR name)
@@ -72,15 +111,15 @@ def verify(user_input: dict):
     # -------------------------
     # LGA MATCH
     # -------------------------
-    lgas = found_state_data["lgas"]
+    lgas = found_state_data.get("lgas", {})
 
     found_lga_name = None
-    found_city_name = None
+    found_lga_info = None
 
     for lga_name, lga_info in lgas.items():
         if lga_name.lower() == lga_input:
             found_lga_name = lga_name
-            found_city_name = lga_info["city"]
+            found_lga_info = lga_info
             break
 
     if not found_lga_name:
@@ -89,6 +128,7 @@ def verify(user_input: dict):
     # -------------------------
     # OPTIONAL CITY CHECK
     # -------------------------
+    found_city_name = found_lga_info.get("city")
     if city_input:
         if not found_city_name:
             return Result(False, ["LGA does not belong to a city"])
@@ -100,11 +140,11 @@ def verify(user_input: dict):
     # SUCCESS
     # -------------------------
     normalized = {
-        "country_code": found_country_code,
+        "country_code": found_country_key,
         "country": country_data["name"],
         "state_code": found_state_code,
         "state": found_state_data["name"],
-        "capital": found_state_data["capital"],
+        "capital": found_state_data.get("capital"),
         "lga": found_lga_name,
         "city": found_city_name,
     }
