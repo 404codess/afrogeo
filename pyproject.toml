@@ -19,3 +19,7 @@ dev = [
     "pytest",
     "pytest-cov"
 ]
+
+[tool.setuptools.package-data]
+afrogeo = ["data/*.json"]
+
