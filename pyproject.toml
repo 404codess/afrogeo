@@ -1,25 +1,74 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "afrogeo"
-version = "0.1.1"
+version = "0.2.2"
 description = "Offline-first African location verification for Python."
-authors = [
-  { name="404Codes" }
-]
 readme = "README.md"
-license = { file = "LICENSE" }
+license = { text = "MIT" }
 requires-python = ">=3.8"
+authors = [
+  { name = "404Codes" }
+]
+keywords = [
+  "africa",
+  "geography",
+  "verification",
+  "offline",
+  "nigeria",
+  "south-africa",
+  "gis",
+  "location"
+]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Software Development :: Libraries :: Python Modules",
+  "Topic :: Scientific/Engineering :: GIS",
+  "Typing :: Typed"
+]
 dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/404codess/afrogeo"
+Repository = "https://github.com/404codess/afrogeo"
+Issues = "https://github.com/404codess/afrogeo/issues"
 
 [project.optional-dependencies]
 dev = [
-    "pytest",
-    "pytest-cov"
+  "pytest>=7.0",
+  "pytest-cov>=4.0",
+  "build",
+  "twine"
 ]
 
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["afrogeo*"]
+exclude = ["data*", "tests*", "scripts*", "examples*"]
+
 [tool.setuptools.package-data]
-afrogeo = ["data/*.json"]
+afrogeo = ["data/*.json", "py.typed"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.coverage.run]
+source = ["afrogeo"]
+omit = ["tests/*"]
+
+[tool.coverage.report]
+show_missing = true
 

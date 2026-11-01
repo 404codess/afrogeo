@@ -1,14 +1,34 @@
-import json
+import copy
 import functools
+import json
 from pathlib import Path
+from typing import Any, Dict, Optional
+
+from afrogeo.normalize import build_normalized
 from afrogeo.result import Result
 
 # Constants
 BASE_DIR = Path(__file__).parent
 DATA_DIR = BASE_DIR / "data"
 
-@functools.lru_cache(maxsize=10)
-def load_country_data(country_code: str):
+
+@functools.lru_cache(maxsize=32)
+def _load_country_json_cached(country_code: str) -> Optional[Dict[str, Any]]:
+    if not country_code.isalpha():
+        return None
+
+    file_path = DATA_DIR / f"{country_code}.json"
+    if not file_path.exists():
+        return None
+
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, OSError):
+        return None
+
+
+def load_country_data(country_code: str) -> Optional[Dict[str, Any]]:
     """
     Load country data from a JSON file in the data directory.
 
@@ -16,32 +36,69 @@ def load_country_data(country_code: str):
         country_code: The ISO country code (e.g., 'ng').
 
     Returns:
-        A dictionary containing the country data, or None if not found.
+        A defensive copy of the country data dictionary, or None if not found.
     """
-    file_path = DATA_DIR / f"{country_code.lower()}.json"
-    if not file_path.exists():
+    if not country_code or not isinstance(country_code, str):
         return None
-    
-    try:
-        with open(file_path, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except (json.JSONDecodeError, IOError):
-        return None
+    data = _load_country_json_cached(country_code.strip().lower())
+    return copy.deepcopy(data) if data is not None else None
 
-def verify(user_input: dict):
+
+@functools.lru_cache(maxsize=1)
+def _cached_country_registry() -> Dict[str, str]:
+    """Map country code or name (lowercase) to file stem code."""
+    registry: Dict[str, str] = {}
+    for path in DATA_DIR.glob("*.json"):
+        try:
+            with open(path, "r", encoding="utf-8") as f:
+                data = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            continue
+        if "country_code" not in data:
+            continue
+        code = str(data["country_code"]).strip().lower()
+        registry[code] = code
+        if "country_name" in data:
+            registry[str(data["country_name"]).strip().lower()] = code
+    return registry
+
+
+def _country_registry() -> Dict[str, str]:
+    """Return a copy of the country registry."""
+    return dict(_cached_country_registry())
+
+
+def _get_input(user_input: Dict[str, Any], primary: str, alias: str) -> str:
+    """Return primary key string value, else alias; empty string if neither set."""
+    primary_val = user_input.get(primary)
+    if isinstance(primary_val, str) and primary_val.strip():
+        return primary_val.strip()
+    alias_val = user_input.get(alias)
+    if isinstance(alias_val, str) and alias_val.strip():
+        return alias_val.strip()
+    return ""
+
+
+def _resolve_country_code(country_input: str) -> Optional[str]:
+    if len(country_input) == 2 and country_input.isalpha():
+        return country_input
+    registry = _cached_country_registry()
+    return registry.get(country_input.lower())
+
+
+def verify(user_input: Any) -> Result:
     """
     Verify African location data against local datasets.
 
-    This function validates if a given state, LGA, and optional city exist
-    within the specified country. It handles case-insensitivity and 
-    normalizes the output.
+    Validates administrative divisions within a country using bundled JSON.
+    Handles case-insensitivity and normalizes the output.
 
     Args:
         user_input (dict): A dictionary containing:
             - 'country' (str): Full name or ISO code (e.g., 'Nigeria' or 'NG').
-            - 'state' (str): Full name or code (e.g., 'Lagos' or 'LA').
-            - 'lga' (str): Local Government Area name.
-            - 'city' (str, optional): City name for validation.
+            - 'state' (str): Level-1 division name or code (alias: 'division_1').
+            - 'lga' (str): Level-2 division name (alias: 'division_2').
+            - 'city' (str, optional): Settlement name (alias: 'settlement').
 
     Returns:
         afrogeo.result.Result: An object containing validation status,
@@ -54,99 +111,127 @@ def verify(user_input: dict):
         ...     print(res.normalized['state'])
         Lagos
     """
-    country_input = str(user_input.get("country", "")).strip().lower()
-    state_input = str(user_input.get("state", "")).strip().lower()
-    lga_input = str(user_input.get("lga", "")).strip().lower()
-    city_input = str(user_input.get("city", "")).strip().lower() or None
+    if not isinstance(user_input, dict):
+        return Result(False, ["user_input must be a dictionary"])
+
+    country_raw = _get_input(user_input, "country", "country")
+    state_raw = _get_input(user_input, "state", "division_1")
+    lga_raw = _get_input(user_input, "lga", "division_2")
+    city_raw = _get_input(user_input, "city", "settlement")
+
+    country_input = country_raw.lower()
+    state_input = state_raw.lower()
+    lga_input = lga_raw.lower()
+    city_input = city_raw.lower() or None
 
     if not country_input:
         return Result(False, ["country is required"])
     if not state_input or not lga_input:
         return Result(False, ["state and lga are required"])
 
-    # -------------------------
-    # DATA LOADING (Dynamic)
-    # -------------------------
-    # Map country names to codes if necessary (Basic mapping for now)
-    country_map = {"nigeria": "ng", "ghana": "gh", "kenya": "ke"}
-    country_code = country_map.get(country_input, country_input)
-    
-    data = load_country_data(country_code)
+    country_code = _resolve_country_code(country_input)
+    data = _load_country_json_cached(country_code) if country_code else None
     if not data:
-        return Result(False, [f"Data for country '{country_input}' not found or unsupported"])
+        return Result(False, [f"Data for country '{country_raw}' not found or unsupported"])
+
+    levels = data.get("levels", {})
+    level_1_label = levels.get("level_1", "State")
+    level_2_label = levels.get("level_2", "LGA")
+
+    divisions = data.get("divisions", {})
 
     # -------------------------
-    # COUNTRY MATCH
+    # LEVEL-1 MATCH (code OR name)
     # -------------------------
-    found_country_key = None
-    for key in data.keys():
-        if key.lower() == country_code:
-            found_country_key = key
-            break
-    
-    if not found_country_key:
-        return Result(False, [f"Invalid country code in data for '{country_input}'"])
+    found_division_code = None
+    found_division_data = None
 
-    country_data = data[found_country_key]
-    states = country_data.get("states", {})
-
-    # -------------------------
-    # STATE MATCH (code OR name)
-    # -------------------------
-    found_state_code = None
-    found_state_data = None
-
-    for code, state in states.items():
+    for code, division in divisions.items():
         if (
             code.lower() == state_input
-            or state["name"].lower() == state_input
+            or division.get("name", "").lower() == state_input
         ):
-            found_state_code = code
-            found_state_data = state
+            found_division_code = code
+            found_division_data = division
             break
 
-    if not found_state_code:
-        return Result(False, ["Invalid state"])
+    if not found_division_code or not found_division_data:
+        return Result(False, [f"Invalid {level_1_label}"])
 
     # -------------------------
-    # LGA MATCH
+    # LEVEL-2 MATCH
     # -------------------------
-    lgas = found_state_data.get("lgas", {})
+    children = found_division_data.get("children", {})
 
-    found_lga_name = None
-    found_lga_info = None
+    found_child_name = None
+    found_child_info = None
 
-    for lga_name, lga_info in lgas.items():
-        if lga_name.lower() == lga_input:
-            found_lga_name = lga_name
-            found_lga_info = lga_info
+    for child_name, child_info in children.items():
+        if child_name.lower() == lga_input:
+            found_child_name = child_name
+            found_child_info = child_info
             break
 
-    if not found_lga_name:
-        return Result(False, ["Invalid LGA for selected state"])
+    if not found_child_name or not found_child_info:
+        return Result(
+            False,
+            [f"Invalid {level_2_label} for selected {level_1_label.lower()}"],
+        )
 
     # -------------------------
-    # OPTIONAL CITY CHECK
+    # OPTIONAL SETTLEMENT CHECK
     # -------------------------
-    found_city_name = found_lga_info.get("city")
+    settlements = found_child_info.get("settlements", [])
+    found_settlement = None
+
     if city_input:
-        if not found_city_name:
-            return Result(False, ["LGA does not belong to a city"])
+        if not settlements:
+            return Result(
+                False,
+                [f"{level_2_label} has no settlements defined"],
+            )
 
-        if found_city_name.lower() != city_input:
-            return Result(False, ["City does not match LGA"])
+        for settlement in settlements:
+            if settlement and settlement.lower() == city_input:
+                found_settlement = settlement
+                break
+
+        if not found_settlement:
+            return Result(
+                False,
+                [f"Settlement does not match {level_2_label}"],
+            )
 
     # -------------------------
     # SUCCESS
     # -------------------------
-    normalized = {
-        "country_code": found_country_key,
-        "country": country_data["name"],
-        "state_code": found_state_code,
-        "state": found_state_data["name"],
-        "capital": found_state_data.get("capital"),
-        "lga": found_lga_name,
-        "city": found_city_name,
-    }
+    normalized = build_normalized(
+        country_code=data["country_code"],
+        country_name=data["country_name"],
+        levels=levels,
+        division_code=found_division_code,
+        division_name=found_division_data["name"],
+        capital=found_division_data.get("capital"),
+        child_name=found_child_name,
+        settlements=settlements,
+        settlement=found_settlement,
+    )
 
     return Result(True, [], normalized)
+
+
+def normalize(user_input: Any) -> Dict[str, Any]:
+    """
+    Validate and return normalized location data.
+
+    Same validation as verify(). Returns the full normalized dictionary
+    on success, or an empty dict on failure.
+
+    Example:
+        >>> from afrogeo import normalize
+        >>> data = normalize({"country": "NG", "state": "LA", "lga": "Agege"})
+        >>> data["division_1_name"]
+        'Lagos'
+    """
+    result = verify(user_input)
+    return result.normalized if result.valid else {}

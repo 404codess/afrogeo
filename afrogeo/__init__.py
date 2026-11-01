@@ -1,9 +1,9 @@
 """
 Afrogeo: Offline-first African location verification for Python.
 
-This package provides tools to validate and normalize location data
-(Country, State, LGA, City) across Africa using local JSON datasets.
-It is designed to work without an internet connection.
+Validate and normalize location data across African countries using local
+JSON datasets. Each country file defines its own administrative level names
+(e.g. State/LGA, Province/Municipality). Works without an internet connection.
 
 Main function:
     verify: Validates location data and returns a Result object.
@@ -15,6 +15,7 @@ Usage:
     ...     print("Location is valid!")
 """
 
-from .verify import verify
+from .result import Result
+from .verify import verify, normalize
 
-__all__ = ["verify"]
+__all__ = ["verify", "normalize", "Result"]
