@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "afrogeo"
-version = "0.2.2"
+version = "0.2.0"
 description = "Offline-first African location verification for Python."
 readme = "README.md"
 license = { text = "MIT" }
@@ -18,7 +18,6 @@ keywords = [
   "verification",
   "offline",
   "nigeria",
-  "south-africa",
   "gis",
   "location"
 ]
@@ -71,4 +70,3 @@ omit = ["tests/*"]
 
 [tool.coverage.report]
 show_missing = true
-

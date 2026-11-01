@@ -47,21 +47,6 @@ data = {
 result = verify(data)
 ```
 
-### South Africa (starter data)
-
-For South Africa, `state` and `lga` map to province and municipality. Use `city` for a settlement within that municipality.
-
-```python
-result = verify({
-    "country": "South Africa",
-    "state": "Gauteng",  # or province code "GP"
-    "lga": "City of Johannesburg Metropolitan Municipality",
-    "city": "Sandton",
-})
-```
-
-Municipality names match official Wikidata labels (see [DATA_SOURCES.md](DATA_SOURCES.md)).
-
 ### Normalize helper
 
 `normalize()` runs the same validation as `verify()` and returns the canonical dict (or `{}` on failure):

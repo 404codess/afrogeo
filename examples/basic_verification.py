@@ -40,21 +40,6 @@ def run_example():
     if not result3:
         print(f"WARNING: Validation failed as expected: {result3.errors}")
 
-    # 4. South Africa (starter data)
-    print("\n--- Case 4: South Africa ---")
-    data4 = {
-        "country": "ZA",
-        "state": "GP",
-        "lga": "City of Johannesburg Metropolitan Municipality",
-        "city": "Sandton",
-    }
-    result4 = verify(data4)
-    if result4:
-        labels = (
-            result4.normalized["level_1_label"],
-            result4.normalized["level_2_label"],
-        )
-        print(f"SUCCESS: {result4.normalized['state']} / {result4.normalized['lga']} ({labels[0]}/{labels[1]})")
 
 if __name__ == "__main__":
     run_example()
