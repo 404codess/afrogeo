@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Afrogeo — Offline-First African Location Verification for Python</title>
+    <meta
+      name="description"
+      content="Validate and normalize African administrative divisions, states, LGAs, provinces, municipalities, and settlements offline in Python."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header class="navbar">
+      <div class="container nav-inner">
+        <a href="#" class="brand">
+          <span class="brand-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+              <path d="M2 12h20"></path>
+            </svg>
+          </span>
+          <span class="brand-text">afro<span class="accent">geo</span></span>
+          <span class="version-pill">v0.2.0</span>
+        </a>
+
+        <nav class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#usage">How to Use</a>
+          <a href="#playground">Try It</a>
+          <a href="#api">API Reference</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a
+            href="https://pypi.org/project/afrogeo/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline btn-sm"
+          >
+            PyPI
+          </a>
+          <a
+            href="https://github.com/404codess/afrogeo"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary btn-sm"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1.1.9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3" />
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <div class="badge">
+              <span class="badge-dot"></span>
+              Offline-First Python Library • Zero Dependencies
+            </div>
+            <h1>
+              African Location Verification,
+              <span class="accent-gradient">Built for Python.</span>
+            </h1>
+            <p class="hero-subtitle">
+              Validate and normalize country, state/province, LGA/municipality, and settlement data across Africa—instantly and completely offline using bundled canonical datasets.
+            </p>
+
+            <div class="install-bar">
+              <div class="install-cmd">
+                <span class="prompt">$</span>
+                <code id="pip-cmd">pip install afrogeo</code>
+              </div>
+              <button id="copy-pip-btn" class="copy-btn" type="button" aria-label="Copy pip install command">
+                <span id="copy-pip-text">Copy</span>
+              </button>
+            </div>
+
+            <div class="hero-cta">
+              <a
+                href="https://pypi.org/project/afrogeo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+              >
+                Download on PyPI
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17L17 7"></path>
+                  <path d="M7 7h10v10"></path>
+                </svg>
+              </a>
+              <a
+                href="https://github.com/404codess/afrogeo"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-outline"
+              >
+                View on GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-code-card">
+            <div class="code-header">
+              <div class="window-dots">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="code-filename">quick_start.py</span>
+            </div>
+            <pre class="code-block"><code><span class="kw">from</span> afrogeo <span class="kw">import</span> verify, normalize
+
+<span class="cm"># Case-insensitive input with ISO codes or full names</span>
+res = verify({
+    <span class="st">"country"</span>: <span class="st">"ng"</span>,
+    <span class="st">"state"</span>: <span class="st">"lagos"</span>,
+    <span class="st">"lga"</span>: <span class="st">"agege"</span>,
+    <span class="st">"city"</span>: <span class="st">"agege"</span>
+})
+
+<span class="kw">if</span> res:
+    <span class="fn">print</span>(res[<span class="st">"state_code"</span>])       <span class="cm"># 'LA'</span>
+    <span class="fn">print</span>(res[<span class="st">"division_1_name"</span>])  <span class="cm"># 'Lagos'</span>
+    <span class="fn">print</span>(res[<span class="st">"division_2_name"</span>])  <span class="cm"># 'Agege'</span>
+    <span class="fn">print</span>(res[<span class="st">"capital"</span>])          <span class="cm"># 'Ikeja'</span></code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Features Section -->
+      <section id="features" class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Why Afrogeo?</span>
+            <h2>Clean, fast, and dependable</h2>
+            <p>Designed for backends, forms, fintech KYC pipelines, and GIS data cleaning without external API latency.</p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <h3>100% Offline-First</h3>
+              <p>No network requests, rate limits, or API keys required. Verification runs locally against bundled JSON datasets in microseconds.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🌍</div>
+              <h3>Multi-Country Schema</h3>
+              <p>Flexible administrative hierarchy labels per country (e.g., State/LGA, Province/Municipality) with both legacy and generic keys.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🔤</div>
+              <h3>Case-Insensitive &amp; Canonical</h3>
+              <p>Pass <code>"lagos"</code>, <code>"LAGOS"</code>, or <code>"LA"</code>—Afrogeo matches regardless of casing and outputs canonical names.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🧰</div>
+              <h3>Ergonomic Result Object</h3>
+              <p>Use <code>if result:</code> in conditionals, index directly with <code>result["state"]</code>, or call <code>normalize()</code> for a plain Python dict.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">🔒</div>
+              <h3>Cache-Safe &amp; Zero Dependencies</h3>
+              <p>Pure Python standard library implementation with LRU-cached dataset reads and mutation-safe outputs.</p>
+            </div>
+
+            <div class="feature-card">
+              <div class="feature-icon">📐</div>
+              <h3>Fully Type-Annotated</h3>
+              <p>Ships with PEP 561 (<code>py.typed</code>) support for seamless autocompletion and type checking in <code>mypy</code> and <code>pyright</code>.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- How to Use Section -->
+      <section id="usage" class="section section-alt">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">How to Use</span>
+            <h2>Verify &amp; normalize in 3 lines of code</h2>
+            <p>Explore common patterns for validating user input and extracting canonical administrative divisions.</p>
+          </div>
+
+          <div class="tabs-wrapper">
+            <div class="tabs-nav" role="tablist">
+              <button class="tab-btn active" data-tab="basic" type="button">1. Basic Verification</button>
+              <button class="tab-btn" data-tab="normalize" type="button">2. Normalize Helper</button>
+              <button class="tab-btn" data-tab="aliases" type="button">3. Generic Aliases</button>
+              <button class="tab-btn" data-tab="result" type="button">4. Result Dict Methods</button>
+            </div>
+
+            <div class="tab-panel active" id="tab-basic">
+              <pre class="code-block"><code><span class="kw">from</span> afrogeo <span class="kw">import</span> verify
+
+data = {
+    <span class="st">"country"</span>: <span class="st">"nigeria"</span>,
+    <span class="st">"state"</span>: <span class="st">"lagos"</span>,
+    <span class="st">"lga"</span>: <span class="st">"agege"</span>,
+    <span class="st">"city"</span>: <span class="st">"agege"</span>  <span class="cm"># Optional settlement check</span>
+}
+
+result = verify(data)
+
+<span class="kw">if</span> result.valid:
+    <span class="fn">print</span>(<span class="st">f"Validated: </span>{result.normalized[<span class="st">'state'</span>]}<span class="st"> - </span>{result.normalized[<span class="st">'lga'</span>]}<span class="st">"</span>)
+<span class="kw">else</span>:
+    <span class="fn">print</span>(<span class="st">f"Errors: </span>{result.errors}<span class="st">"</span>)</code></pre>
+            </div>
+
+            <div class="tab-panel" id="tab-normalize">
+              <pre class="code-block"><code><span class="kw">from</span> afrogeo <span class="kw">import</span> normalize
+
+<span class="cm"># Returns the canonical dictionary on success, or {} if invalid</span>
+clean_location = normalize({
+    <span class="st">"country"</span>: <span class="st">"NG"</span>,
+    <span class="st">"state"</span>: <span class="st">"LA"</span>,
+    <span class="st">"lga"</span>: <span class="st">"Agege"</span>
+})
+
+<span class="fn">print</span>(clean_location[<span class="st">"division_1_name"</span>])  <span class="cm"># "Lagos"</span>
+<span class="fn">print</span>(clean_location[<span class="st">"division_2_name"</span>])  <span class="cm"># "Agege"</span>
+<span class="fn">print</span>(clean_location[<span class="st">"capital"</span>])          <span class="cm"># "Ikeja"</span></code></pre>
+            </div>
+
+            <div class="tab-panel" id="tab-aliases">
+              <pre class="code-block"><code><span class="kw">from</span> afrogeo <span class="kw">import</span> verify
+
+<span class="cm"># Country-agnostic keys work across all administrative structures</span>
+result = verify({
+    <span class="st">"country"</span>: <span class="st">"NG"</span>,
+    <span class="st">"division_1"</span>: <span class="st">"Lagos"</span>,
+    <span class="st">"division_2"</span>: <span class="st">"Agege"</span>,
+    <span class="st">"settlement"</span>: <span class="st">"Agege"</span>
+})
+
+<span class="fn">print</span>(result[<span class="st">"levels"</span>])  <span class="cm"># {'level_1': 'State', 'level_2': 'LGA'}</span></code></pre>
+            </div>
+
+            <div class="tab-panel" id="tab-result">
+              <pre class="code-block"><code><span class="kw">from</span> afrogeo <span class="kw">import</span> verify
+
+res = verify({<span class="st">"country"</span>: <span class="st">"NG"</span>, <span class="st">"state"</span>: <span class="st">"Edo"</span>, <span class="st">"lga"</span>: <span class="st">"Oredo"</span>})
+
+<span class="cm"># Truthiness check</span>
+<span class="kw">if</span> res:
+    <span class="cm"># Direct indexing &amp; membership</span>
+    <span class="kw">assert</span> <span class="st">"state_code"</span> <span class="kw">in</span> res
+    <span class="fn">print</span>(res[<span class="st">"state_code"</span>])              <span class="cm"># "ED"</span>
+    <span class="fn">print</span>(res.get(<span class="st">"city"</span>, <span class="st">"Not set"</span>))     <span class="cm"># "Not set"</span>
+    <span class="fn">print</span>(res.to_dict())                  <span class="cm"># Full normalized dict copy</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Interactive Playground Section -->
+      <section id="playground" class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">Interactive Preview</span>
+            <h2>See what <code>verify()</code> returns</h2>
+            <p>Click a preset below to inspect the exact <code>Result</code> and normalized payload produced by Afrogeo.</p>
+          </div>
+
+          <div class="playground-box">
+            <div class="playground-controls">
+              <span class="control-label">Select Scenario:</span>
+              <div class="preset-buttons">
+                <button class="preset-btn active" data-preset="valid_full" type="button">
+                  Valid (Full + Settlement)
+                </button>
+                <button class="preset-btn" data-preset="valid_codes" type="button">
+                  Valid (ISO &amp; State Code)
+                </button>
+                <button class="preset-btn" data-preset="invalid_lga" type="button">
+                  Invalid LGA Error
+                </button>
+                <button class="preset-btn" data-preset="invalid_settlement" type="button">
+                  Settlement Mismatch
+                </button>
+              </div>
+            </div>
+
+            <div class="playground-split">
+              <div class="playground-pane">
+                <div class="pane-title">Input Dictionary</div>
+                <pre class="code-block"><code id="playground-input"></code></pre>
+              </div>
+              <div class="playground-pane">
+                <div class="pane-title">
+                  <span>Output (<code>Result</code>)</span>
+                  <span id="playground-status" class="status-pill valid">result.valid = True</span>
+                </div>
+                <pre class="code-block"><code id="playground-output"></code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- API Reference Section -->
+      <section id="api" class="section section-alt">
+        <div class="container">
+          <div class="section-header">
+            <span class="eyebrow">API Reference</span>
+            <h2>Input &amp; Normalized Output Schema</h2>
+            <p>All fields accepted by <code>verify(user_input)</code> and <code>normalize(user_input)</code>.</p>
+          </div>
+
+          <div class="table-card">
+            <table class="api-table">
+              <thead>
+                <tr>
+                  <th>Input Key</th>
+                  <th>Generic Alias</th>
+                  <th>Required</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>country</code></td>
+                  <td>—</td>
+                  <td><span class="req-yes">Required</span></td>
+                  <td>Full country name (e.g. <code>"Nigeria"</code>) or 2-letter ISO code (<code>"NG"</code>).</td>
+                </tr>
+                <tr>
+                  <td><code>state</code></td>
+                  <td><code>division_1</code></td>
+                  <td><span class="req-yes">Required</span></td>
+                  <td>Level-1 administrative division name or code (e.g. <code>"Lagos"</code> or <code>"LA"</code>).</td>
+                </tr>
+                <tr>
+                  <td><code>lga</code></td>
+                  <td><code>division_2</code></td>
+                  <td><span class="req-yes">Required</span></td>
+                  <td>Level-2 division name belonging to the selected Level-1 division (e.g. <code>"Agege"</code>).</td>
+                </tr>
+                <tr>
+                  <td><code>city</code></td>
+                  <td><code>settlement</code></td>
+                  <td><span class="req-opt">Optional</span></td>
+                  <td>Settlement or locality name validated against the Level-2 division.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Call to Action -->
+      <section class="cta-banner">
+        <div class="container cta-inner">
+          <h2>Ready to add offline African location verification?</h2>
+          <p>Install from PyPI in seconds or contribute new country datasets on GitHub.</p>
+          <div class="hero-cta">
+            <a
+              href="https://pypi.org/project/afrogeo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-primary"
+            >
+              View on PyPI
+            </a>
+            <a
+              href="https://github.com/404codess/afrogeo"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-outline"
+            >
+              GitHub Repository
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <span class="brand-text">afro<span class="accent">geo</span></span>
+          <span class="footer-copy">MIT License • Built by 404Codes</span>
+        </div>
+        <div class="footer-links">
+          <a href="https://pypi.org/project/afrogeo/" target="_blank" rel="noopener noreferrer">PyPI</a>
+          <a href="https://github.com/404codess/afrogeo" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://github.com/404codess/afrogeo/issues" target="_blank" rel="noopener noreferrer">Issues</a>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
+
